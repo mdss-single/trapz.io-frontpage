@@ -172,6 +172,8 @@ body {
 /*  <modal>  */
 .modal {
 	display:none;
+	animation:fadeOut 1s;
+	transition:all 1s;
 }
 .modal--active {
 	display:-webkit-flex;
@@ -191,6 +193,9 @@ body {
 	background-color:rgba(0, 0, 0, .8);
 	padding:80px 0;
 }
+.modal--fadeout {
+	animation:fadeOut 1s;
+}
 	.modal__inner {
 		position:relative;
 		width:700px;
@@ -198,6 +203,7 @@ body {
 		background-color:#fff;
 		border-radius:10px;
 		padding:20px 40px;
+		box-shadow:0 0 20px 20px rgba(0, 0, 0, .6);
 	}
 	.modal__close {
 		position:absolute;
@@ -275,6 +281,15 @@ body {
 	}
 	100% {
 		opacity:1;
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity:1;
+	}
+	100% {
+		display:none;
+		opacity:0;
 	}
 }
 /*  </animations>  */
